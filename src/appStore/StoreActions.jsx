@@ -1,16 +1,18 @@
 import Store from './configureStore'
-import example from './example'
+import counter from './counter'
+import real from './real'
+import todo from './todo'
 
-// Combine all actions into one big object for export and easy use by import
-const allActions = [example.actions]
+const allActions = [counter.actions, real.actions, todo.actions]
 const dispatcher = Store.dispatch
-const Actions = {}
+const StoreActions = {}
 
 allActions.forEach(actions => {
     Object.keys(actions).forEach(action => {
-        if(Actions[action]) throw "Same named action already exists - " + action
-        Actions[action] = (payload) => dispatcher(actions[action](payload))
+        if(StoreActions[action]) throw "Same named action already exists - " + action
+        StoreActions[action] = (payload) => dispatcher(StoreActions[action](payload))
     })
 })
 
-export default Actions
+console.log(StoreActions, "StoreActions")
+export default StoreActions

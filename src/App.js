@@ -1,15 +1,22 @@
 import React from 'react';
+import logo from './logo.svg';
 import './App.css';
-import Example from './components/Example'
+import Todo from './components/Todo'
+import Counter from './components/Counter'
+import ButtonPanel from './components/ButtonPanel'
+import RealObject from './components/RealObject'
+import { connect } from 'react-redux'
 
-
-function App() {
-  console.log("App Is Rendered")
+function App(props) {
+  console.log("App Is Rendered", props)
   return (
     <div className="App">
-      <Example />
+      <Todo />
+      <Counter />
+      <ButtonPanel />
+      <RealObject />
     </div>
   );
 }
 
-export default App;
+export default connect(s => ({state: s}))(App);

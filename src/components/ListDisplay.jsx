@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux'
+import { deleteTodo } from '../appStore/todo'
 
 function ListDisplay(props) {
   console.log("Component6 - ListDisplay Is Rendered", props)
@@ -13,4 +14,4 @@ function ListDisplay(props) {
   );
 }
 
-export default connect((s) => ({justList: s.example.justList}))(ListDisplay);
+export default connect((s) => ({justList: s.real.justList}))(ListDisplay);

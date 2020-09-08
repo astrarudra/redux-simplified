@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux'
+import { deleteTodo } from '../appStore/todo'
 
 function ObjListDisplay(props) {
   console.log("Component5 - ObjListDisplay Is Rendered", props)
@@ -13,4 +14,4 @@ function ObjListDisplay(props) {
   );
 }
 
-export default connect((s) => ({objList: s.example.objList}))(ObjListDisplay);
+export default connect((s) => ({objList: s.real.objList}))(ObjListDisplay);

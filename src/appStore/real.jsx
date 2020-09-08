@@ -1,7 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit"
 
-// Initial State
-var example = {
+var realObj = {
     objList: [
         {id:1, data: "example1"},
         {id:2, data: "example2"},
@@ -10,32 +9,29 @@ var example = {
     email: "astrarudra8@gmail.com"
 }
 
-// Store Actions - These should be pure functions.
 const slice = createSlice({
-    name: "example",
-    initialState: example,
+    name: "realObj",
+    initialState: realObj,
     reducers: {
-        // Handles Immutability
-        changeEmail: (example, action) => {
+        changeEmail: (realObj, action) => {
             var { email } = action.payload
-            example.email = email
-            return example
+            realObj.email = email
+            return realObj
         },
-        changeData: (example, action) => {
+        changeData: (realObj, action) => {
             var { id, data } = action.payload
-            example.objList.forEach(o => {
+            realObj.objList.forEach(o => {
                 if(o.id === id) o.data = data
             })
-            return example
+            return realObj
         },
-        addList: (example, action) => {
-            var { justList } = example
+        addList: (realObj, action) => {
+            var { justList } = realObj
             justList.push("Dummy")
-            return example
+            return realObj
         },
     }
 })
 
-// Direct Export - May not be required.
 export const { changeEmail , changeData , addList } = slice.actions
 export default slice
