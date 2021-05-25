@@ -12,7 +12,7 @@ function ButtonPanel(props) {
   console.log("Component3 - Buttom Panel Is Rendered", props)
   return (
     <div className="card p-2 m-2">
-      <div className="card-title font-weight-bold">Component3 - Buttom Panel</div>
+      <div className="card-title font-weight-bold">Component5 - Buttom Panel</div>
       <div className="d-flex card-body" style={{alignSelf: "center"}}>
         <input type="text" onChange={(e) => setInput(e.target.value)} value={input} className="form-control" style={{width: '400px'}}/>
         <button onClick={() => props.dispatch(addTodo({value: input}))} type="button" className="btn btn-primary mr-1">Add Todo</button>

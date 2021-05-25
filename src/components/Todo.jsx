@@ -6,7 +6,7 @@ function Todo(props) {
   console.log("Component1 - Todo is Rendered", props)
   return (
     <div className="card p-2 m-2">
-      <div className="card-title font-weight-bold">Component1 - Todo</div>
+      <div className="card-title font-weight-bold">Component7 - Todo</div>
       {props.todo ? props.todo.map((o,i) => 
         <div className="todo" key={i}>
             <div>{o.value}</div>
