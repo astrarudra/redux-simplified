@@ -10,10 +10,10 @@ function RealObject(props) {
   console.log("Component4 - Real Object is Rendered", props)
   return (
     <div className="card p-2 m-2">
-      <div className="card-title font-weight-bold">Component4 - Real Object</div>
+      <div className="card-title font-weight-bold">Component 1 - Parent</div>
       <div className="d-flex"  style={{alignSelf: "center"}}>
         <div className="card p-2 m-2">
-          <div className="card-title font-weight-bold">Part of Component4</div>
+          <div className="card-title font-weight-bold">Component 2</div>
           <div>Email</div>
           <div>{props.email}</div>
         </div>
